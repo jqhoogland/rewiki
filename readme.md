@@ -89,7 +89,7 @@ You can use plugins to change wikitext.
 import {visit} from 'unist-util-visit'
 
 /** @type {import('unified').Plugin<[], import('wtast').Root>} */
-function myRemarkPluginToIncreaseHeadings[] {
+function myRemarkPluginToIncreaseHeadings() {
   return (tree) => {
     visit(tree, (node) => {
       if (node.type === 'heading') {
@@ -130,9 +130,9 @@ import rewikiRehype from 'rewiki-rehype'
 import rehypeSanitize from 'rehype-sanitize'
 import rehypeStringify from 'rehype-stringify'
 
-main[]
+main()
 
-async function main[] {
+async function main() {
   const file = await unified[]
     .use(rewikiParse)
     .use(rewikiRehype)
